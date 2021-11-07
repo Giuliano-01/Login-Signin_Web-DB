@@ -1,0 +1,222 @@
+*{
+	margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;	
+}
+
+/*scrollbar*/
+::-webkit-scrollbar{
+    width: 12px;
+    background: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #003459 ;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #022946;
+    border-radius: 3px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/*cuerpo de la pagina*/
+body{
+    background-color: slategray;
+    height: 100vh;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+/* CABECERA MENUS */
+
+    .cabecera{
+        background: rgb(17, 17, 17);
+        color: white;
+        border-bottom: 1px solid gray;
+        padding: 10px 0;
+        position: fixed; /*para que se desplaze junto al usuario la cabecera*/
+        z-index: 100; /*como tiene un zindex alto queda por encima de todo en la pagina*/
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+
+    /*Todos los enlaces de la cabecera*/
+    .cabecera a{
+        text-decoration: none;
+    }
+
+/* BARRA MENUS */
+
+.barra-de-menu{
+    width: 100%;
+    min-width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    display: flex;  /*flex*/
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;  
+}
+    /*logo/menuopc*/
+    .logo{
+        margin: 0;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.041);
+        background-color: rgba(128, 128, 128, 0.027);
+        border-radius: 15px;
+        letter-spacing: 0.5px;
+        font-size: 2vw;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+    } 
+    .menu-opc{
+        display: none;
+    }
+        /*opciones del menú*/
+        .listas-menu{
+            list-style: none;
+        }
+            .listas-menu li{
+                /*para que se mantenga en su posicion*/
+                position: relative;
+                /*uno al lado del otro*/
+                display: inline-block;
+            }
+            /*login - signin*/
+            .logsignin{
+                border: 1px solid white;
+                border-radius: 10px;
+                margin: 4px 0px;
+            }
+                .login a{
+                    color: white;
+                    font-size: calc(0.5vw + 16px);
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                .login a:hover{
+                    color: gray;
+                }
+                #line-login{
+                    border: 1px solid white;
+                }
+                .sign a{
+                    color: white;
+                    position: relative;
+                    font-size: calc(0.5vw + 16px);
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                .sign a:hover{
+                    color: gray;
+                }
+                .ingresar a{
+                    display: none;
+                }
+                
+        /*barra de busqueda*/
+        .separador-busqueda{
+            margin: 0 10px;
+        }
+
+        #input-search{
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 30vw;
+            min-width: 200px;
+            height: 2.6vw;
+            min-height: 30px;
+            font-size: 15px;
+            text-indent: 40px; /*identacion para que no quede tan a la izquierda*/
+            background-image: url(images/busqueda.png); /* icono busqueda */
+            background-size: 30px;
+            background-repeat: no-repeat;
+        }
+            /*tabla de contenido de busqueda*/
+            .content-search{
+                position: absolute;
+                background-color: black;
+                width: 30%;
+                top: 60px;
+                display: none;
+            }
+            .content-table{
+                width: 94%;
+                max-height: 200px;
+                height: auto;
+                background-color: black;
+                margin-left: 10px;
+                overflow-y: visible; /*si se pasa del margen se oculta y crea una barrita*/
+                overflow-x: hidden; 
+            }
+                .content-table table{
+                    width: 100%;
+                }
+                    tbody tr td a{
+                        display: block;
+                        padding: 10px;
+                        color: white;
+                    }
+                    tbody tr td a:hover{
+                        background-color: white;
+                        color: black;
+                    }
+
+
+/*BARRA MENU RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+    .logo{
+        font-size: 17px;
+    }  
+    .login a{
+        display: none;
+    }
+    #line-login{
+        display: none;
+    }
+    .sign a{
+        display: none;
+    }
+    .ingresar a{
+        display: inline;
+        color: white;
+        position: relative;
+        font-size: calc(0.5vw + 16px);
+        margin-left: 10px;
+        margin-right: 15px;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    .separador-busqueda{
+        display: none;
+    }
+    .logo{
+        display: none;
+    } 
+    .menu-opc{
+        margin: 0;
+        padding: 0;
+        display: inline;
+        border: 1px solid rgba(255, 255, 255, 0.993);
+        border-radius: 5px;
+        background-image: url(images/menu.png);
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position-y: center;
+        background-position-x: center;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+    }
+}
+
+
